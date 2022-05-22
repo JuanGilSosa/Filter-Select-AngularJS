@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="App">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="main.controller.js"></script>
+</head>
+
+<body>
+    <div ng-controller="mainController as Ctrl">
+        <div class="uk-container uk-text-lead"> Filter UKit</div>
+        <div class="uk-container">
+            
+            <select class="uk-select uk-width-1-6" ng-model="Ctrl.option1" ng-options="op.label for op in Ctrl.options | nonSelect: Ctrl.option2 | nonSelect: Ctrl.option3 | nonSelect: Ctrl.option4"></select>
+            <hr>
+
+            <select class="uk-select uk-width-1-6" ng-model="Ctrl.option2"
+                ng-options="op.label for op in Ctrl.options | nonSelect: Ctrl.option1 | nonSelect: Ctrl.option3 | nonSelect: Ctrl.option4"></select>
+            <hr>
+
+            <select class="uk-select uk-width-1-6" ng-model="Ctrl.option3"
+                ng-options="op.label for op in Ctrl.options | nonSelect: Ctrl.option1 | nonSelect: Ctrl.option2 | nonSelect: Ctrl.option4"></select>
+            <hr>
+
+            <select class="uk-select uk-width-1-6" ng-model="Ctrl.option4"
+                ng-options="op.label for op in Ctrl.options | nonSelect: Ctrl.option1 | nonSelect: Ctrl.option2 | nonSelect: Ctrl.option3"></select>
+            
+            <div style="margin-top: 15px;"><button class="uk-button uk-button-danger" ng-click="Ctrl.clear()">Clear</button></div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
